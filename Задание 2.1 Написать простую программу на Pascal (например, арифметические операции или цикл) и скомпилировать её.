@@ -1,0 +1,35 @@
+program Dzhaparova;
+
+var
+  num1, num2: Real; // Объявляем переменные для чисел
+  sum, difference, product, quotient: Real; // Объявляем переменные для результатов
+
+begin
+  // Запрашиваем ввод двух чисел у пользователя
+  write('Введите первое число: ');
+  readln(num1);
+  
+  write('Введите второе число: ');
+  readln(num2);
+
+  // Выполняем арифметические операции
+  sum := num1 + num2;               // Сложение
+  difference := num1 - num2;        // Вычитание
+  product := num1 * num2;           // Умножение
+
+  // Проверка деления на ноль
+  if num2 <> 0 then
+    quotient := num1 / num2          // Деление
+  else
+    quotient := 0;                   // Если делитель 0, устанавливаем значение равным 0
+
+  // Выводим результаты
+  writeln('Сумма: ', sum:0:2);
+  writeln('Разность: ', difference:0:2);
+  writeln('Произведение: ', product:0:2);
+  
+  if num2 <> 0 then
+    writeln('Частное: ', quotient:0:2)
+  else
+    writeln('Частное: Деление на ноль невозможно.');
+end.
