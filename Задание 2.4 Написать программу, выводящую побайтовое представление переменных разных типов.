@@ -1,0 +1,52 @@
+program ByteRepresentation;
+
+type
+  TBytes = array[0..SizeOf(Integer) - 1] of Byte; // Массив байт для представления
+
+var
+  integerVar: Integer;
+  realVar: Real;
+  charVar: Char;
+  boolVar: Boolean;
+  intBytes: TBytes;
+  realBytes: TBytes;
+  charBytes: TBytes;
+  boolBytes: TBytes;
+  i: Integer;
+
+begin
+  // Инициализация переменных
+  integerVar := 123456;
+  realVar := 123.456;
+  charVar := 'A';
+  boolVar := True;
+
+  // Вывод побайтового представления для Integer
+  Move(integerVar, intBytes, SizeOf(Integer));
+  writeln('Побайтовое представление Integer:');
+  for i := 0 to SizeOf(Integer) - 1 do
+    write(intBytes[i]:2, ' '); // Выводим байты
+  writeln;
+
+  // Вывод побайтового представления для Real
+  Move(realVar, realBytes, SizeOf(Real));
+  writeln('Побайтовое представление Real:');
+  for i := 0 to SizeOf(Real) - 1 do
+    write(realBytes[i]:2, ' '); // Выводим байты
+  writeln;
+
+  // Вывод побайтового представления для Char
+  Move(charVar, charBytes, SizeOf(Char));
+  writeln('Побайтовое представление Char:');
+  for i := 0 to SizeOf(Char) - 1 do
+    write(charBytes[i]:2, ' '); // Выводим байты
+  writeln;
+
+  // Вывод побайтового представления для Boolean
+  Move(boolVar, boolBytes, SizeOf(Boolean));
+  writeln('Побайтовое представление Boolean:');
+  for i := 0 to SizeOf(Boolean) - 1 do
+    write(boolBytes[i]:2, ' '); // Выводим байты
+  writeln;
+
+end.
