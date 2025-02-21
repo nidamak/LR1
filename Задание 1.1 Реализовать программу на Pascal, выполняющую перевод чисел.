@@ -1,5 +1,5 @@
 program Dzhaparova;  
-
+ 
 var
   num, temp, f, t, g: Integer; // Объявление переменных для работы с числами
   binStr, octStr, hexStr: String; // Строки для двоичного, восьмеричного и шестнадцатеричного представлений
